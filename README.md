@@ -3,6 +3,7 @@
 # EmployeeDirectory
 
 ### Screenshots of deployed app pages
+![image](https://user-images.githubusercontent.com/60640915/92419147-d4d5f900-f128-11ea-9a61-5c8dfc16f11b.png)
 ![image](https://user-images.githubusercontent.com/60640915/92417907-013a4700-f122-11ea-9992-952bfda13a93.png)
 ![image](https://user-images.githubusercontent.com/60640915/92417932-27f87d80-f122-11ea-9434-0a54483f45c7.png)
 
