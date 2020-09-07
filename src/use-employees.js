@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useReducer, useEffect } from 'react'
+import sortBy from 'lodash.sortby'
 
 const employeeContext = createContext()
 
@@ -12,13 +13,34 @@ export const useEmployees = () => {
 }
 
 const actions = {
-    LOAD_EMPLOYEES: 'LOAD_EMPLOYEES'
+    LOAD_EMPLOYEES: 'LOAD_EMPLOYEES',
+    CHANGE_SORT: 'CHANGE_SORT',
+    SEARCH_CHANGED: 'SEARCH_CHANGED',
+    FILTERED_EMPLOYEES: 'FILTERED_EMPLOYEES'
 }
 
 function employeeReducer(state, action) {
     switch (action.type) {
+        case actions.FILTERED_EMPLOYEES:
+            return { ...state, filteredEmployees: action.employees }
+        case actions.SEARCH_CHANGED:
+            return { ...state, query: action.query }
+        case actions.CHANGE_SORT:
+            if (state.column === action.column) {
+                return {
+                    ...state,
+                    filteredEmployees: state.filteredEmployees.reverse(),
+                    direction: state.direction === "ascending" ? "descending" : "ascending"
+                }
+            }
+            return {
+                ...state,
+                column: action.column,
+                filteredEmployees: sortBy(state.filteredEmployees, [action.column]),
+                direction: "ascending"
+            }
         case actions.LOAD_EMPLOYEES:
-            return { ...state, employees: action.employees }
+            return { ...state, employees: action.employees, filteredEmployees: action.employees }
         default:
             throw new Error('Action not implemented')
     }
@@ -26,6 +48,7 @@ function employeeReducer(state, action) {
 
 function useProvideEmployees() {
     const [state, dispatch] = useReducer(employeeReducer, {
+        filteredEmployees: [],
         employees: [],
         loading: false,
         column: null,

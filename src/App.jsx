@@ -6,22 +6,24 @@ import { useEmployees } from "./use-employees";
 
 function App() {
   const { state } = useEmployees();
-  const { employees } = state;
+  const { filteredEmployees } = state;
+  const headers = [
+    { display: "First Name", name: "first" },
+    { display: "Last Name", name: "last" },
+    { display: "Email", name: "email" },
+    { display: "Phone", name: "phone" },
+    { display: "Location", name: "location" },
+  ];
   return (
     <>
       <Header />
       <div className="App">
         <EmployeeSearch />
-        <DataTable
-          data={employees}
-          headers={[
-            { display: "First Name", name: "first" },
-            { display: "Last Name", name: "last" },
-            { display: "Email", name: "email" },
-            { display: "Phone", name: "phone" },
-            { display: "Location", name: "location" },
-          ]}
-        />
+        {filteredEmployees.length ? (
+          <DataTable data={filteredEmployees} headers={headers} />
+        ) : (
+          <div>No Data...</div>
+        )}
       </div>
     </>
   );
