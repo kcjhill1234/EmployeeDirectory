@@ -5,7 +5,7 @@ import TableBody from "./Table-Body";
 
 export default function DataTable({ data, headers }) {
   return (
-    <Table sortable striped>
+    <Table sortable striped color="blue">
       <TableHeader headers={headers} />
       <TableBody data={data} />
     </Table>

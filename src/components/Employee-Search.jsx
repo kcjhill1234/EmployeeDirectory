@@ -20,6 +20,8 @@ export default function EmployeeSearch() {
   return (
     <div>
       <Input
+      size="huge"
+      focus
         value={query}
         onChange={handleSearch}
         placeholder="Search..."

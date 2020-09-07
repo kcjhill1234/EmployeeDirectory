@@ -2,8 +2,9 @@
   ![badmath](https://img.shields.io/github/last-commit/kcjhill1234/EmployeeDirectory) ![badmath](https://img.shields.io/github/issues-pr/kcjhill1234/EmployeeDirectory) ![badmath](https://img.shields.io/github/languages/top/kcjhill1234/EmployeeDirectory)
 # EmployeeDirectory
 
-# screenshot of deployed app pages
-![image]
+### Screenshots of deployed app pages
+![image](https://user-images.githubusercontent.com/60640915/92417907-013a4700-f122-11ea-9992-952bfda13a93.png)
+![image](https://user-images.githubusercontent.com/60640915/92417932-27f87d80-f122-11ea-9434-0a54483f45c7.png)
 
 
 ## Description
@@ -21,4 +22,4 @@ Kenyatta Hil
 
 ## Deployed link
 
-[Heroku link]()
+[Heroku link](https://kcjhill1234.github.io/EmployeeDirectory/)
